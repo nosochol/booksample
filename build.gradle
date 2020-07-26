@@ -25,10 +25,17 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url "https://code.lds.org/nuxus/content/groups/main-repo"}
 }
 
 dependencies {
     //testCompile group: 'junit', name: 'junit', version: '4.12'
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile "org.projectlombok:lombok:1.18.12"
+    //compile ('org.projectlombok:lombok')
+    annotationProcessor ('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    //compile('com.oracle:ojdbc6:11.2.0.3')
+    compile('com.h2database:h2')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
