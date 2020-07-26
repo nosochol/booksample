@@ -1,6 +1,6 @@
 package com.nosochol.sbook.web;
 
-//import com.nosochol.sbook.config.auth.LoginUser;
+import com.nosochol.sbook.config.auth.LoginUser;
 import com.nosochol.sbook.config.auth.dto.SessionUser;
 import com.nosochol.sbook.service.PostsService;
 import com.nosochol.sbook.web.dto.PostsResponseDto;
@@ -21,9 +21,9 @@ public class IndexController {
     private final HttpServletRequest httpServlet;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts",postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpServlet.getAttribute("user");
+        //SessionUser user = (SessionUser) httpServlet.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
