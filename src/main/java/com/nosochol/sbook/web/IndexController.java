@@ -32,6 +32,7 @@ public class IndexController {
         return "index";
     }
 
+    /*  save */
     @GetMapping("/posts/save")
     public String postSave(){
         return "posts-save";
