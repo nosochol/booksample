@@ -41,3 +41,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-mustache')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
+task print() {
+    doLast{
+        println "github push complete"
+    }
+}
